@@ -1,0 +1,23 @@
+## install
+git clone https://github.com/Joeclinton1/google-images-download.git
+cd google-images-download
+sudo python3 setup.py install
+python3 ./downloader.py 
+
+
+## usage
+from google_images_download import google_images_download
+def imageCrawling(keyword, directory, count):
+	response = google_images_download.googleimagesdownload()
+	arguments = {
+		"keywords": keyword,
+		"limit":count,
+		"print_urls":True,
+		"no_directory":True,
+		"output_directory":directory
+		}
+	paths = response.download(arguments)
+	print(paths)
+	
+imageCrawling("된장찌개", "./images/jjigae", 100)
+
